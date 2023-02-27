@@ -1,0 +1,341 @@
+@charset "utf-8";
+
+/* p {
+    color: blue;
+    font-size: 30px;
+} */
+
+/* font-family URL -> https://willcloud.jp/knowhow/font-family/#h4_10 */
+/*  base style */
+
+body {
+    font-family: 'Noto Sans JP', "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #333;
+}
+label, input, textarea, select, button {
+    cursor: pointer;
+}
+button {
+    border: 0;
+}
+/*
+grid
+*/
+.grid {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.grid-item {
+    list-style: none;
+}
+.grid-col-2 > .grid-item {
+    width: 50%;
+}
+.grid-col-3 > .grid-item {
+    width: 33.3%;
+}
+.grid-col-4 > .grid-item {
+    width: 25%;
+}
+.grid-col-5 > .grid-item {
+    width: 20%;
+}
+
+/*
+section
+*/
+.section {
+    padding: 30px 15px;
+}
+/* sectionを拡張する */
+.section.section-secondary {
+    background: #efefef;
+}
+.section-headline {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    margin: 0 0 40px
+}
+.section-button {
+    margin-top: 40px;
+    text-align: center;
+}
+/*
+hero
+*/
+.hero {
+    /* heroの動画画面を目いっぱいに広げたい
+     vw(view width) Windowサイズの横幅を100vwに
+     （調整）vh(view hight) Windowサイズの縦幅を50vhに */
+    width: 100vw;
+    height: 50vh;
+   /* relative の要素の中で、子要素の absolute を自由に行き来したい */
+   position: relative;
+   overflow: hidden;
+}
+.hero > strong {
+    position: absolute;
+    /* Strong内の文字列を中央へ配置したい */
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    color: #fff;
+    font-weight: bold;
+    display: block;
+    width: 100%;
+    text-align:center;
+    z-index: 2;
+}
+
+/* Videoの幅も調整したい */
+.hero > video {
+    position: absolute;
+/* 高さはヨコの幅に合わせて追随してくるようにしたい➡auto
+ （補足）上下端の画像は、はみ出しているが見栄えという点でDon't care */
+    width: 120%;
+    height: auto;
+    z-index: 1;
+}
+
+/*
+about
+*/
+.about {
+    margin: 0;
+    /* display: flex 子要素が横並びに配置される */
+    display: flex;
+}
+/* .about-image{} */
+.about-caption {
+    padding-left: 15px;
+}
+.about-headline {
+    margin: 0 0 20px;
+    font-size:30px
+}
+/* .about-description{} */
+
+/*
+feature
+*/
+.feature {
+    text-align: center;
+    padding: 0 15px;
+}
+.feature-headline {
+    font-weight: bold;
+    margin: 0 0 20px;
+}
+.feature-img {
+    margin: 0 0 20px;
+}
+.feature-description {
+    margin: 0;
+    text-align: left;
+}
+
+/*
+card
+*/
+.card {
+    padding: 0 10px;
+}
+.card-link {
+    display: block;
+    color: #333;
+    text-decoration: none;
+    position: relative;
+    transition: background-color 1s;
+}
+
+.card-link:hover {
+    background-color: #444;
+}
+.card-label {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #999;
+    color: #fff;
+    display: block;
+    padding: 5px 10px;
+    font-size: 12px;
+}
+.card-image {
+    width: 100%;
+    height: auto;
+}
+.card-info {
+    padding: 5px 10px;
+}
+/* .card-time {} */
+.card-headline {
+    margin: 0;
+}
+.card-description {
+    margin: 0;
+}
+
+/*
+avator
+*/
+.avator {
+    margin: 0;
+    display: flex;
+    /* avator の画像とT文字の順序を反転させる。（dt文字➡dd画像の順序でHTML記述するルールなので） */
+    flex-direction: row-reverse;
+    align-items: center;
+    padding: 10px;
+    justify-content: start;
+
+}
+.avator-name {
+    font-weight: bold;
+    padding-left: 15px;
+}
+.avator-image {
+    margin: 0;
+    border-radius: 50%;
+    /* overflow default は visible
+    hidden にするとカットされた部分は表示しない。 */
+    overflow: hidden;
+}
+
+/*
+button
+*/
+.button {
+    display: inline-block;
+    color: #fff;
+    font-weight: bold;
+    background-color: #333;
+    text-align: center;
+    padding: 15px 60px;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 5px 5px 0 #bbb;
+    transition: box-shadow 0.25s;
+}
+.button:hover {
+    box-shadow: 0 0 0 #bbb;
+}
+
+/* 色違いのButtonに、Version違いのclassを用意する */
+.button.button-submission {
+    background: #92d3ca;
+}
+
+/*
+.select, .input, .radio, .textarea
+*/
+.select {
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    min-width: 500px;
+}
+.input {
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    min-width: 500px;
+}
+.radio {
+    margin: 0 10px;
+}
+.textarea {
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    min-width: 500px;
+    min-height: 100px;
+}
+/*
+form
+*/
+/* .form {} */
+.form-table {
+    margin: 0 auto;
+}
+/* .form-table tr {} */
+.form-table th {
+    padding: 10px;
+    text-align: left;
+}
+.form-table td {
+    padding: 10px;
+}
+.form-button {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* works */
+.works {
+    margin: 40px 0;
+    padding: 20px;
+    text-align: center;
+}
+.works > img {
+    margin: 25px;
+}
+
+/*
+footer
+*/
+.footer {
+    background-color: #333;
+    color: #fff;
+}
+.footer-map {
+    margin: 0;
+    padding: 40px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer-map > iframe {
+    width: 60%;
+}
+.footer-mapinfo {
+    width: 40%;
+    padding: 15px;
+}
+.footer-maplogo {
+    font-size: 25px;
+    font-weight: bold;
+/* （追加）ロゴのBugfix Inc.の文字をSVGの高さ位置と合わせたいので。 */
+    display: flex;
+}
+.footer-maplogo > svg {
+    fill: transparent;
+    margin-right: 10px;
+}
+/* （追加）ロゴのBugfix Inc.の文字をSVGの高さ位置と合わせたいので。 */
+.footer-maplogo > div {
+    margin: 20px 0 10px 0;
+    text-align: center;
+}
+.footer-mapaddress {
+    /* font-style を勝手にItaric調にされてしまっているのでnomalにしておく。 */
+    font-style: normal;
+}
+.footer-mapaddress > a {
+    color: #fff;
+}
+.footer-line {
+    border-color: #444;
+
+}
+.footer-copy {
+    display: block;
+    text-align: center;
+    padding: 10px;
+}
