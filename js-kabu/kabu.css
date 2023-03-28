@@ -1,3 +1,7 @@
+body {
+  background: #8f0;
+}
+
 .kabu {
   width: 500px;
 }
@@ -5,19 +9,22 @@
   display: flex;
 }
 .kabu-nav-item {
-  background-color: #ccc;
+  background-color: #cfc;
   color: #000;
   padding: 10px 20px;
   text-decoration: none;
   border-radius: 5px 5px 0 0;
+  margin-right: 3px;
 }
 .kabu-nav-item.is-active {
-  background: #000;
+  background: #080;
   color: #fff;
 }
 .kabu-contents {
   border: 1px solid #ccc;
   padding: 20px;
+  background-color: #ccc;
+  color: #000;
 }
 .kabu-contents-item {
   display: none;
